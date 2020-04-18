@@ -14,18 +14,21 @@ namespace SalesApp
     class Account
     {
         private double
-        public static int LastAccountNumber = 0;
+        public static int LastAccountNumber = 9999;
         private double LastBalance = 0.00;
         #region
         
     public int AccountNumber { get; private set; }
+        /// <summary>
+        /// client company name
+        /// </summary>
     public string AccountName { get; set; }
     public string EmailAddress { get; set; }
     public string BillingAddress { get; set; }
     public string ShippingAddress { get; set; }
     public int ContactNumber { get; set; }
     /// <summary>
-    /// client company name
+    /// client contact person name
     /// </summary>
     public string ContactName { get; set; }
     /// <summary>
@@ -35,7 +38,8 @@ namespace SalesApp
         /// <summary>
         /// outstanding balance
         /// </summary>
-        public double OSBalance { get; private set }
+        public double PI { get; private set }
+
 
 
         #endregion
@@ -46,7 +50,7 @@ namespace SalesApp
         {
            
             AccountNumber = LastAccountNumber + 5;
-            OSBalance += LastBalance;
+            
         }
 
 
