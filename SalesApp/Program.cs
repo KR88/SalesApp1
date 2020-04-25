@@ -6,28 +6,20 @@ namespace SalesApp
     {
         static void Main(string[] args)
         {
-            //creating an object of account
-            var company1 = Disti.CreateAccount(
-            company1.AccountName = "Infinite Supply";
-            company1.EmailAddress = "163@163.com";
-            company1.ContactName = "Head Buyer";
-            company1.ContactNumber = 2127778899;
-            company1.BillingAddress = "DCBA";
-            company1.ShippingAddress = "ABCD";
-            Console.WriteLine($"A#: { company1.AccountNumber}, An: {company1.ContactName}, Aemail: {company1.EmailAddress}, " +
-                $"Acn: {company1.ContactName}, Ac#: {company1.ContactNumber}, Aba: {company1.BillingAddress}, " +
-                $"Asd: {company1.ShippingAddress}, Acd: {company1.CreatedDate: Now}, Aosb: {company1.OSBalance}");
-            var company1P = new Part();
-            company1P.PartNumber = 5445;
-            company1P.quantity = 3000;
-            company1P.SalesPrice = 25.75;
-            company1P.TargetUnitprice = 21.50;
-            company1P.Total = 
+
+
+            //creating an object
+            var firstCustomer = Disti.CreateAccount("Infinite Supply", "163@163.com", "DCBA", "ABCD", 1882371910, "Head Buyer");
+
+
+            var secondCustomer = Disti.CreateAccount("AGMA", "158@163.com", "DCBA", "ABCD", 1364092767, "Head Purchaser");
 
 
 
 
-         }
+
+
+        }
         
-    }
+    };
 }

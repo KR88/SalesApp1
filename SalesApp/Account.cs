@@ -5,7 +5,25 @@ using System.Text;
 
 namespace SalesApp
 {
-    enum BrandName
+    enum ETATime
+    {
+        stock,
+        threedays,
+        sevendays,
+        tendays,
+        fifteendays
+    }
+
+    enum TypeOfRFQ 
+    { 
+    spotbuy,
+    recurring,
+    scheduled,
+    longterm
+
+    }
+
+    enum BrandNames
     {
         Xilinx,
         Altera,
@@ -19,15 +37,15 @@ namespace SalesApp
     NewBulk,
     Referb
     }
-    
+
     /// <summary>
     /// customer account & order info with their relevent properties
     /// </summary>
     class Account
     {
 
-        private static int LastAccountNumber = 9999;
-        private double LastBalance = 0.00;
+        private static int lastAccountNumber = 9999;
+        private decimal lastBalance = 0;
 
         #region
 
@@ -43,20 +61,18 @@ namespace SalesApp
         public int ContactNumber { get; set; }
         //head buyer name
         public string ContactName { get; set; }
-        /// <summary>
-        /// outstanding balance
-        /// </summary>
-        public decimal MyProperty { get; set; }
-        public int PartNumber { get; set; }
-        public enum BrandName  { }
+        public string PartNumber { get; set; }
+        public BrandNames  PartBrandName { get; set; }
         public int Quantity { get; set; }
-        public decimal TargetUnitprice { get; set; }
+        public double TargetUnitprice { get; set; }
         public decimal SalesPrice { get; private set; }
-        public enum PartQuality { }
-        public DateTime CreatedDate { get; }
+        public QualityOfPart PartQuality { get; set; }
+        public DateTime CreatedDate { get; private set; }
         //request for quote date
-        public static DateTime RFQDate { get; set; }
-        public int LeadTime { get; set; }
+        public DateTime RFQDate { get; set; }
+        public TypeOfRFQ RFQType { get; set; }
+        public ETATime LeadTime { get; private set; }
+        public  double  Invoice { get; private set; }
 
 
 
@@ -66,13 +82,18 @@ namespace SalesApp
 
         #endregion
 
+        
+
         #region  Constructor
 
         public Account()
         {
 
-            AccountNumber = LastAccountNumber + 5;
+            lastAccountNumber += 5;
+            AccountNumber = lastAccountNumber;
             CreatedDate = DateTime.Now;
+
+
 
         }
 
