@@ -48,6 +48,13 @@ namespace SalesApp
                         Console.WriteLine(" Email Address ");
                         emailAddress = Console.ReadLine();
                         var accounts = Disti.GetAccounts(emailAddress);
+                        foreach (var a in accounts)
+
+                        {
+                            Console.WriteLine($" AN:{a.AccountNumber}, N:{a.AccountName}");
+                            Console.WriteLine(" Account Number ");
+                            var accountNumber Convert.ToInt32(Console.Readline());
+                        }
 
 
                     }
