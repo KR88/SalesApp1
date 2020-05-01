@@ -87,17 +87,20 @@ namespace SalesApp
 
 
         #region Method
+        
+
+
 
         private void Buy(int accountNumber, decimal amount)
 
         {
-            Balance -= lastBalance
+            Balance -= lastBalance;
         }
 
         public  void Sell(int accountNumber, decimal amount)
 
         {
-            Balance += lastBalance
+            Balance += lastBalance;
         }
 
 
@@ -121,7 +124,7 @@ namespace SalesApp
                 CreatedDate = DateTime.Now;
             }
 
-
+            
         }
 
     }

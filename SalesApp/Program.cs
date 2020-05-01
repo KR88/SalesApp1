@@ -29,11 +29,26 @@ namespace SalesApp
                     var accountName = Console.ReadLine();
                     Console.WriteLine(" Email address ");
                     var emailAddress = Console.ReadLine();
+                    Console.WriteLine(" Name of contact");
+                    var contactName = Console.ReadLine();
                     var accountTypes = Enum.GetNames(typeof(TypeOfAccount));
                     for (var i = 0; i < accountTypes.Length; i++)
                     {
                         Console.WriteLine($"{i} . {accountTypes[i]}");
                         var accountType = Enum.Parse<TypeOfAccount>(Console.ReadLine());
+                        Console.WriteLine(" Buy or Sell amount ");
+                        var amount = Convert.ToDecimal(Console.ReadLine());
+                        var account = Disti.CreateAccount(accountName, emailAddress, contactName);
+                        Console.WriteLine($"AN:{account.AccountNumber}, N:{account.AccountName}, E:{account.EmailAddress}, B:{account.Balance}, T:{account.AccountType}, D:{account.CreatedDate} ");
+                        break;
+                    }
+
+                case "2":
+                    {
+                        Console.WriteLine(" Email Address ");
+                        emailAddress = Console.ReadLine();
+                        var accounts = Disti.GetAccounts(emailAddress);
+
 
                     }
 
