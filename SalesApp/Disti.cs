@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace SalesApp
@@ -9,9 +10,17 @@ namespace SalesApp
     /// admin called Disti
     /// </summary>
     static class Disti
+    {
+        
+    }
+    
+            
+    
+            
+            
 
     #region Method
-    {
+    
         private static List<Account> accounts = new List<Account>();
         private static List<Transaction> transactions = new List<Transaction>();
         /// <summary>
@@ -22,13 +31,13 @@ namespace SalesApp
         /// <param name="emailAddress">customer email address</param>
         /// <param name="contactName">contact person name or title</param>
         /// <returns></returns>
-        public static Account CreateAccount(string accountName, string emailAddress, string contactName)
+        public static Account CreateAccount(string accountName, string emailAddress, string contactName, TypeOfAccount AccountType)
         {
             var account = new Account()
             {
                 AccountName = accountName,
                 EmailAddress = emailAddress,
-                ContactName = contactName
+                ContactName = contactName,
             };
             return account;
 
@@ -37,17 +46,15 @@ namespace SalesApp
 
 
 
-                {
-
-            }
-        }
-    };
 
     #endregion
 
+        }
+    }
 
 
 
 
 
-}
+
+

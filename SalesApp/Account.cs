@@ -52,7 +52,7 @@ namespace SalesApp
     {
 
         private static int lastAccountNumber = 9999;
-        public decimal lastBalance = 0;
+        private decimal lastBalance = 0;
 
         #region
 
@@ -87,12 +87,15 @@ namespace SalesApp
 
 
         #region Method
-        
 
 
 
-        private void Buy(int accountNumber, decimal amount)
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountNumber">customer account number</param>
+        /// <param name="amount">amount of buy which is debited or sell which is credited</param>
+        public void Buy(decimal amount)
         {
             Balance -= lastBalance;
         }
@@ -102,9 +105,6 @@ namespace SalesApp
         {
             Balance += lastBalance;
         }
-
-
-
 
         #endregion
 
